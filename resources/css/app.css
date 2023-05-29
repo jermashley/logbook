@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 8px;
+}
+
+body {
+  @apply bg-rosePineDawn-base font-sans text-rosePineDawn-text dark:bg-rosePine-base dark:text-rosePine-text;
+}

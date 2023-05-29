@@ -1,0 +1,1 @@
+export { useStoreStudentMutation } from './useStoreStudentMutation'
