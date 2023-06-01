@@ -1,7 +1,5 @@
-const Home = () => {
-  return (
-    <h1 className="text-2xl">Log</h1>
-  )
+const HomePage = () => {
+  return <h1 className="text-2xl">Home</h1>
 }
 
-export default Home
+export default HomePage

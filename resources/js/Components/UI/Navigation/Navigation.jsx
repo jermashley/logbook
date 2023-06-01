@@ -1,8 +1,32 @@
 import { SelectTheme } from '@Components/Feature/SelectTheme'
+import { faCircle } from '@fortawesome/pro-duotone-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useRouteIsCurrent } from '@Hooks/useRouteIsCurrent'
 import { Link } from '@inertiajs/react'
 import { cn } from '@Utils/cn'
 
+const navigationLinks = [
+  {
+    name: `Log`,
+    href: `/log`,
+  },
+  {
+    name: `Foto`,
+    href: `/foto`,
+  },
+  {
+    name: `Work`,
+    href: `/work`,
+  },
+  {
+    name: `Resume`,
+    href: `/resume`,
+  },
+]
+
 export const Navigation = () => {
+  const { currentRouteBeginsWith } = useRouteIsCurrent()
+
   return (
     <nav className={cn(`top-0" sticky w-full`)}>
       <section
@@ -22,41 +46,26 @@ export const Navigation = () => {
         <div
           className={cn(`space-x-1" flex flex-row items-center justify-end`)}
         >
-          <Link
-            href="/"
-            className={cn(
-              `overflow-hidden rounded-md border border-transparent bg-base px-4 py-2 text-sm  hover:border-highlightHigh hover:bg-overlay`,
-            )}
-          >
-            Log
-          </Link>
-
-          <Link
-            href="/"
-            className={cn(
-              `overflow-hidden rounded-md border border-transparent bg-base px-4 py-2 text-sm  hover:border-highlightHigh hover:bg-overlay`,
-            )}
-          >
-            Foto
-          </Link>
-
-          <Link
-            href="/"
-            className={cn(
-              `overflow-hidden rounded-md border border-transparent bg-base px-4 py-2 text-sm  hover:border-highlightHigh hover:bg-overlay`,
-            )}
-          >
-            Work
-          </Link>
-
-          <Link
-            href="/"
-            className={cn(
-              `overflow-hidden rounded-md border border-transparent bg-base px-4 py-2 text-sm  hover:border-highlightHigh hover:bg-overlay`,
-            )}
-          >
-            Resume
-          </Link>
+          {navigationLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={cn(
+                `rounded-md border border-transparent bg-base px-4 py-2 text-sm  hover:border-highlightHigh hover:bg-overlay`,
+              )}
+            >
+              <span
+                className={cn(
+                  `text-text`,
+                  currentRouteBeginsWith(link.href)
+                    ? `font-bold text-love underline`
+                    : ``,
+                )}
+              >
+                {link.name}
+              </span>
+            </Link>
+          ))}
 
           <SelectTheme />
         </div>

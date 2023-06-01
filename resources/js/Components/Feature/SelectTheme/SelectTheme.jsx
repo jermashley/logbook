@@ -7,6 +7,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Menu, Transition } from '@headlessui/react'
 import { useColorScheme, useLocalStorage } from '@mantine/hooks'
+import { cn } from '@Utils/cn'
 import { Fragment, useEffect } from 'react'
 
 const themes = [
@@ -70,14 +71,14 @@ export const SelectTheme = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-surface shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-love focus-visible:ring-opacity-75">
+        <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right rounded-md border border-highlightMed bg-surface shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-love focus-visible:ring-opacity-75">
           <div className="px-1 py-1 ">
             {themes.map((theme) => (
               <Menu.Item key={theme.value}>
                 {({ active }) => (
                   <button
                     className={`${
-                      active ? `bg-highlightHigh text-text` : `text-text`
+                      active ? `bg-love text-white` : `text-text`
                     } group flex w-full items-center justify-between rounded-md px-2 py-2 text-sm`}
                     onClick={() => setSelectedTheme(theme.value)}
                   >
@@ -90,7 +91,11 @@ export const SelectTheme = () => {
                     {selectedTheme === theme.value ? (
                       <FontAwesomeIcon
                         icon={faCircle}
-                        className="text-[0.5rem] text-love"
+                        className={cn(
+                          `text-[0.5rem] ${
+                            active ? `text-white` : `text-love`
+                          }`,
+                        )}
                         fixedWidth
                       />
                     ) : (
