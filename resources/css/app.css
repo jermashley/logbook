@@ -7,5 +7,9 @@
 }
 
 body {
-  @apply bg-rosePineDawn-base font-sans text-rosePineDawn-text dark:bg-rosePine-base dark:text-rosePine-text;
+  @apply bg-base font-sans text-text;
+}
+
+::selection {
+  @apply bg-foam text-white/80;
 }
