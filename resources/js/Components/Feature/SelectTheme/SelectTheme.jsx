@@ -1,9 +1,9 @@
 import {
-  faCircle,
   faCircleHalfStroke,
   faMoonCloud,
   faSunCloud,
 } from '@fortawesome/pro-duotone-svg-icons'
+import { faCircle } from '@fortawesome/pro-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Menu, Transition } from '@headlessui/react'
 import { useColorScheme, useLocalStorage } from '@mantine/hooks'
@@ -58,10 +58,11 @@ export const SelectTheme = () => {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="inline-flex w-full items-center justify-center space-x-2 overflow-hidden rounded-md border border-transparent bg-base p-2 text-sm text-text  hover:border-highlightHigh hover:bg-overlay hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-love focus-visible:ring-opacity-75">
+        <Menu.Button className="inline-flex w-full items-center justify-center space-x-2 overflow-hidden rounded-md border border-transparent p-2 text-base text-text  hover:border-highlightHigh hover:bg-overlay hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-love focus-visible:ring-opacity-75">
           <DynamicThemeIcon theme={selectedTheme} />
         </Menu.Button>
       </div>
+
       <Transition
         as={Fragment}
         enter="transition ease-out duration-100"

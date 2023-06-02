@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Statamic\Facades\Entry;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,25 @@ Route::get('/', function () {
 });
 
 Route::get('/log', function () {
-    return Inertia::render('Log/Index');
+    $entries = Entry::query()
+        ->where('collection', 'log')
+        ->orderBy('date', 'desc')
+        ->get();
+
+    return Inertia::render('Log/Index', [
+        'entries' => $entries,
+    ]);
+});
+
+Route::get('/log/{slug}', function ($slug) {
+    $entry = Entry::query()
+        ->where('collection', 'log')
+        ->where('slug', $slug)
+        ->first();
+
+    return Inertia::render('Log/Entry', [
+        'entry' => $entry,
+    ]);
 });
 
 Route::get('/foto', function () {

@@ -1,8 +1,8 @@
 export const ComposeComponents = ({ components, children }) => {
   return (
     <>
-      {components.reduceRight((acc, Comp) => {
-        return <Comp>{acc}</Comp>
+      {components.reduceRight((acc, Component) => {
+        return <Component>{acc}</Component>
       }, children)}
     </>
   )

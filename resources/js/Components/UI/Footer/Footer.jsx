@@ -16,6 +16,18 @@ export const Footer = () => {
         <FontAwesomeIcon icon={faCopyright} className="mr-1" fixedWidth />
         {new Date().getFullYear()} Jeremiah Ashley
       </p>
+
+      <p className="text-center text-xs">
+        Theme by{` `}
+        <a
+          href="https://rosepinetheme.com/"
+          className="text-love underline"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Rosé Pine
+        </a>
+      </p>
     </footer>
   )
 }

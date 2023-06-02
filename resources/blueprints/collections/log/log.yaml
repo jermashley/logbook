@@ -12,6 +12,17 @@ tabs:
               validate:
                 - required
           -
+            handle: summary
+            field:
+              antlers: false
+              type: textarea
+              display: Summary
+              icon: textarea
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+          -
             handle: hero
             field:
               max_files: 1
@@ -30,6 +41,8 @@ tabs:
               hide_display: false
               validate:
                 - required
+              container: images
+              folder: /
           -
             handle: content
             field:

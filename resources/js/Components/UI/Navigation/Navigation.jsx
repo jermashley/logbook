@@ -1,6 +1,4 @@
 import { SelectTheme } from '@Components/Feature/SelectTheme'
-import { faCircle } from '@fortawesome/pro-duotone-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useRouteIsCurrent } from '@Hooks/useRouteIsCurrent'
 import { Link } from '@inertiajs/react'
 import { cn } from '@Utils/cn'
@@ -28,7 +26,7 @@ export const Navigation = () => {
   const { currentRouteBeginsWith } = useRouteIsCurrent()
 
   return (
-    <nav className={cn(`top-0" sticky w-full`)}>
+    <nav className={cn(`sticky top-0 w-full bg-base/75 backdrop-blur-lg`)}>
       <section
         className={cn(
           `mx-auto flex w-full max-w-2xl flex-row items-center justify-between px-0 py-4`,
@@ -51,12 +49,12 @@ export const Navigation = () => {
               key={link.href}
               href={link.href}
               className={cn(
-                `rounded-md border border-transparent bg-base px-4 py-2 text-sm  hover:border-highlightHigh hover:bg-overlay`,
+                `group rounded-md border border-transparent px-4 py-2 text-sm  hover:border-highlightHigh hover:bg-overlay`,
               )}
             >
               <span
                 className={cn(
-                  `text-text`,
+                  `text-text group-hover:text-love`,
                   currentRouteBeginsWith(link.href)
                     ? `font-bold text-love underline`
                     : ``,
