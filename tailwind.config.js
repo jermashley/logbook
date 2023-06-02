@@ -997,6 +997,7 @@ module.exports = {
     require(`@tailwindcss/typography`),
     require(`tailwindcss-animate`),
     require(`@tailwindcss/forms`),
+    require(`tailwind-gradient-mask-image`),
     createThemes({
       rosePine: {
         base: `#191724`,
