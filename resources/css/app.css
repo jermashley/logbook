@@ -4,6 +4,13 @@
 
 :root {
   --radius: 8px;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 body {

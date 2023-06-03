@@ -1,4 +1,8 @@
+import { useDocumentTitle } from '@mantine/hooks'
+
 export const LogEntryPage = ({ entry }) => {
+  useDocumentTitle(`${entry.title} | Jeremiah Ashley`)
+
   return (
     <article className="prose md:prose-lg lg:prose-xl">
       <img src={entry.hero.url} alt="" />

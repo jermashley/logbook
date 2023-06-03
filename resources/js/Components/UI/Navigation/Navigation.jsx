@@ -26,7 +26,7 @@ export const Navigation = () => {
   const { currentRouteBeginsWith } = useRouteIsCurrent()
 
   return (
-    <nav className={cn(`sticky top-0 w-full bg-base/75 backdrop-blur-lg`)}>
+    <nav className={cn(`sticky top-0 z-50 w-full bg-base/75 backdrop-blur-lg`)}>
       <section
         className={cn(
           `mx-auto flex w-full max-w-2xl flex-row items-center justify-between px-0 py-4`,
@@ -56,7 +56,7 @@ export const Navigation = () => {
                 className={cn(
                   `text-text group-hover:text-love`,
                   currentRouteBeginsWith(link.href)
-                    ? `font-bold text-love underline`
+                    ? `font-bold text-love underline decoration-1 underline-offset-2`
                     : ``,
                 )}
               >

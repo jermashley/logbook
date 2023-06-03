@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\LogController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use Statamic\Facades\Entry;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,27 +19,8 @@ Route::get('/', function () {
     return Inertia::render('Home/Index');
 });
 
-Route::get('/log', function () {
-    $entries = Entry::query()
-        ->where('collection', 'log')
-        ->orderBy('date', 'desc')
-        ->get();
-
-    return Inertia::render('Log/Index', [
-        'entries' => $entries,
-    ]);
-});
-
-Route::get('/log/{slug}', function ($slug) {
-    $entry = Entry::query()
-        ->where('collection', 'log')
-        ->where('slug', $slug)
-        ->first();
-
-    return Inertia::render('Log/Entry', [
-        'entry' => $entry,
-    ]);
-});
+Route::get('/log', [LogController::class, 'index'])->name('log.index');
+Route::get('/log/{slug}', [LogController::class, 'show'])->name('log.show');
 
 Route::get('/foto', function () {
     return Inertia::render('Foto/Index');
