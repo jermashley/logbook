@@ -51,7 +51,7 @@ export const Navigation = () => {
               key={link.href}
               href={link.href}
               className={cn(
-                `group rounded-md border border-transparent px-4 py-2 text-sm  hover:border-highlightHigh hover:bg-overlay`,
+                `group rounded-md border border-transparent px-4 py-2 text-sm hover:border-highlightHigh hover:bg-overlay`,
               )}
             >
               <span

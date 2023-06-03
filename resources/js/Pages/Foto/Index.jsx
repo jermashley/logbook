@@ -1,7 +1,4 @@
-import {
-  faClone,
-  faGalleryThumbnails,
-} from '@fortawesome/pro-duotone-svg-icons'
+import { faClone } from '@fortawesome/pro-duotone-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from '@inertiajs/react'
 import { useDocumentTitle } from '@mantine/hooks'
