@@ -26,8 +26,10 @@ export const Navigation = () => {
   const { currentRouteBeginsWith } = useRouteIsCurrent()
 
   return (
-    <nav className={cn(`sticky top-0 z-50 w-full bg-base/75 backdrop-blur-lg`)}>
-      <section
+    <header
+      className={cn(`sticky top-0 z-50 w-full bg-base/75 backdrop-blur-lg`)}
+    >
+      <nav
         className={cn(
           `mx-auto flex w-full max-w-2xl flex-row items-center justify-between px-0 py-4`,
         )}
@@ -67,7 +69,7 @@ export const Navigation = () => {
 
           <SelectTheme />
         </div>
-      </section>
-    </nav>
+      </nav>
+    </header>
   )
 }

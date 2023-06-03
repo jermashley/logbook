@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FotoController;
 use App\Http\Controllers\LogController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -22,9 +23,8 @@ Route::get('/', function () {
 Route::get('/log', [LogController::class, 'index'])->name('log.index');
 Route::get('/log/{slug}', [LogController::class, 'show'])->name('log.show');
 
-Route::get('/foto', function () {
-    return Inertia::render('Foto/Index');
-});
+Route::get('/foto', [FotoController::class, 'index'])->name('foto.index');
+Route::get('/foto/{id}', [FotoController::class, 'show'])->name('foto.show');
 
 Route::get('/work', function () {
     return Inertia::render('Work/Index');
