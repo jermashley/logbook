@@ -17,7 +17,7 @@ tabs:
               min_files: 1
               mode: list
               container: images
-              restrict: false
+              restrict: true
               allow_uploads: true
               show_filename: true
               show_set_alt: true
@@ -30,6 +30,7 @@ tabs:
               hide_display: false
               validate:
                 - required
+              folder: fotos
           -
             handle: featured
             field:
