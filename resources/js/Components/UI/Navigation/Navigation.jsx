@@ -13,8 +13,8 @@ const navigationLinks = [
     href: `/foto`,
   },
   {
-    name: `Work`,
-    href: `/work`,
+    name: `Projects`,
+    href: `/projects`,
   },
   {
     name: `Resume`,
