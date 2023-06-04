@@ -31,7 +31,7 @@ const FotoIndexPage = ({ entries }) => {
                 {entry.featured ? (
                   <FontAwesomeIcon
                     icon={faThumbTack}
-                    className="text-xl text-white drop-shadow-md"
+                    className="text-base text-white drop-shadow-md"
                     fixedWidth
                   />
                 ) : null}
@@ -39,7 +39,7 @@ const FotoIndexPage = ({ entries }) => {
                 {entry.media.length >= 2 ? (
                   <FontAwesomeIcon
                     icon={faClone}
-                    className="text-xl text-white drop-shadow-md"
+                    className="text-base text-white drop-shadow-md"
                     fixedWidth
                   />
                 ) : null}
@@ -47,7 +47,7 @@ const FotoIndexPage = ({ entries }) => {
 
               <img
                 src={entry.media[0].url}
-                className="aspect-square h-full w-full scale-100 object-cover brightness-[0.85] transition-all duration-500 group-hover:scale-[1.075] group-hover:brightness-[1.1]"
+                className="aspect-square h-full w-full scale-100 object-cover brightness-[0.85] transition-all duration-500 group-hover:scale-[1.075] group-hover:brightness-[1]"
                 alt=""
               />
             </Link>
