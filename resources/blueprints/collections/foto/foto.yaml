@@ -9,6 +9,8 @@ tabs:
             field:
               type: text
               required: true
+              validate:
+                - required
           -
             handle: media
             field:
@@ -28,6 +30,17 @@ tabs:
               hide_display: false
               validate:
                 - required
+          -
+            handle: featured
+            field:
+              default: false
+              type: toggle
+              display: Featured
+              icon: toggle
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
           -
             handle: caption
             field:
@@ -52,9 +65,4 @@ tabs:
               default: now
               validate:
                 - required
-          -
-            handle: slug
-            field:
-              type: slug
-              localizable: true
 title: Foto
