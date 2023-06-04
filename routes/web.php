@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FotoController;
 use App\Http\Controllers\LogController;
+use App\Http\Controllers\ProjectsController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -26,9 +27,8 @@ Route::get('/log/{slug}', [LogController::class, 'show'])->name('log.show');
 Route::get('/foto', [FotoController::class, 'index'])->name('foto.index');
 Route::get('/foto/{id}', [FotoController::class, 'show'])->name('foto.show');
 
-Route::get('/work', function () {
-    return Inertia::render('Work/Index');
-});
+Route::get('/projects', [ProjectsController::class, 'index'])->name('projects.index');
+Route::get('/projects/{slug}', [ProjectsController::class, 'show'])->name('projects.show');
 
 Route::get('/resume', function () {
     return Inertia::render('Resume/Index');
