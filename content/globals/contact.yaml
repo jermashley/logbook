@@ -1,0 +1,20 @@
+title: Contact
+data:
+  email: wave@jeremiahashley.com
+  socials:
+    -
+      id: ligo1wxg
+      social_link:
+        network: github
+        label: '@jermashley'
+        url: 'https://github.com/jermashley'
+      type: social
+      enabled: true
+    -
+      id: ligo2a8z
+      social_link:
+        network: twitter
+        label: '@jermashley'
+        url: 'https://twitter.com/jermashley'
+      type: social
+      enabled: true
