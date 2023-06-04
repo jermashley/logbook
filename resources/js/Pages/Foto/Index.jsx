@@ -1,10 +1,15 @@
-import { faClone } from '@fortawesome/pro-duotone-svg-icons'
+import { faClone, faThumbTack } from '@fortawesome/pro-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from '@inertiajs/react'
 import { useDocumentTitle } from '@mantine/hooks'
 
 const FotoIndexPage = ({ entries }) => {
   useDocumentTitle(`Foto | Jeremiah Ashley`)
+
+  const featuredEntries = entries.filter((entry) => entry.featured)
+  const regularEntries = entries.filter((entry) => !entry.featured)
+
+  const orderedEntries = [...featuredEntries, ...regularEntries]
 
   return (
     <>
@@ -16,19 +21,29 @@ const FotoIndexPage = ({ entries }) => {
 
       {entries.length >= 1 ? (
         <section className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
-          {entries?.map((entry) => (
+          {orderedEntries?.map((entry) => (
             <Link
               key={entry.id}
               href={`/foto/${entry.id}`}
               className="group relative aspect-square overflow-hidden outline outline-4 outline-transparent transition-all duration-200 hover:outline-text/50"
             >
-              {entry.media.length >= 2 ? (
-                <FontAwesomeIcon
-                  icon={faClone}
-                  className="absolute right-3 top-3 z-10 text-xl text-white shadow-md"
-                  fixedWidth
-                />
-              ) : null}
+              <div className="absolute right-3 top-3 z-10 flex flex-row items-center justify-center space-x-2">
+                {entry.featured ? (
+                  <FontAwesomeIcon
+                    icon={faThumbTack}
+                    className="text-xl text-white drop-shadow-md"
+                    fixedWidth
+                  />
+                ) : null}
+
+                {entry.media.length >= 2 ? (
+                  <FontAwesomeIcon
+                    icon={faClone}
+                    className="text-xl text-white drop-shadow-md"
+                    fixedWidth
+                  />
+                ) : null}
+              </div>
 
               <img
                 src={entry.media[0].url}
