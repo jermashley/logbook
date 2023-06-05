@@ -29,17 +29,6 @@ tabs:
               visibility: visible
               hide_display: false
           -
-            handle: featured
-            field:
-              default: false
-              type: toggle
-              display: Featured
-              icon: toggle
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              hide_display: false
-          -
             handle: summary
             field:
               antlers: false
@@ -111,6 +100,17 @@ tabs:
             field:
               type: slug
               localizable: true
+          -
+            handle: featured
+            field:
+              default: false
+              type: toggle
+              display: Featured
+              icon: toggle
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
           -
             handle: date
             field:

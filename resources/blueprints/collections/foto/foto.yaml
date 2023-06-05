@@ -32,17 +32,6 @@ tabs:
                 - required
               folder: fotos
           -
-            handle: featured
-            field:
-              default: false
-              type: toggle
-              display: Featured
-              icon: toggle
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              hide_display: false
-          -
             handle: caption
             field:
               antlers: false
@@ -58,6 +47,17 @@ tabs:
     sections:
       -
         fields:
+          -
+            handle: featured
+            field:
+              default: false
+              type: toggle
+              display: Featured
+              icon: toggle
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
           -
             handle: date
             field:

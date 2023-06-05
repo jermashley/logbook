@@ -23,17 +23,6 @@ tabs:
               visibility: visible
               hide_display: false
           -
-            handle: featured
-            field:
-              default: false
-              type: toggle
-              display: Featured
-              icon: toggle
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              hide_display: false
-          -
             handle: hero
             field:
               max_files: 1
@@ -69,6 +58,17 @@ tabs:
             field:
               type: slug
               localizable: true
+          -
+            handle: featured
+            field:
+              default: false
+              type: toggle
+              display: Featured
+              icon: toggle
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
           -
             handle: date
             field:
