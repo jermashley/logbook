@@ -43,7 +43,7 @@ const DynamicThemeIcon = ({ theme }) => {
   )
 }
 
-export const SelectTheme = () => {
+export const SelectTheme = ({ className }) => {
   const colorScheme = useColorScheme()
   const [selectedTheme, setSelectedTheme] = useLocalStorage({
     key: `color-scheme`,
@@ -56,7 +56,7 @@ export const SelectTheme = () => {
   }, [selectedTheme])
 
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <Menu as="div" className={cn(`relative inline-block text-left`, className)}>
       <div>
         <Menu.Button className="inline-flex w-full items-center justify-center space-x-2 overflow-hidden rounded-md border border-transparent p-2 text-base text-text  hover:border-highlightHigh hover:bg-overlay hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-love focus-visible:ring-opacity-75">
           <DynamicThemeIcon theme={selectedTheme} />

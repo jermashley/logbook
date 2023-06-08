@@ -17,7 +17,7 @@ export const Footer = () => {
         {new Date().getFullYear()} Jeremiah Ashley
       </p>
 
-      <p className="text-center text-xs">
+      <p className="text-center text-[0.625rem] text-text/60">
         Theme by{` `}
         <a
           href="https://rosepinetheme.com/"
