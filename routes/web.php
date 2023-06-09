@@ -3,6 +3,7 @@
 use App\Http\Controllers\FotoController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\ProjectsController;
+use App\Http\Controllers\SpotifyController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -33,3 +34,8 @@ Route::get('/projects/{slug}', [ProjectsController::class, 'show'])->name('proje
 Route::get('/resume', function () {
     return Inertia::render('Resume/Index');
 });
+
+Route::get('/spotify/me', [SpotifyController::class, 'me'])->name('spotify.me');
+Route::get('/spotify/now-playing', [SpotifyController::class, 'nowPlaying'])->name('spotify.nowPlaying');
+Route::get('/spotify/recently-played', [SpotifyController::class, 'recentlyPlayed'])->name('spotify.recentlyPlayed');
+Route::get('/spotify/top/{type}', [SpotifyController::class, 'top'])->name('spotify.top');

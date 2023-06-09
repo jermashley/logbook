@@ -1,4 +1,5 @@
 import { SelectTheme } from '@Components/Feature/SelectTheme'
+import { SpotifySidebar } from '@Components/Feature/SpotifySidebar'
 import { faBars } from '@fortawesome/pro-duotone-svg-icons'
 import { faTimes } from '@fortawesome/pro-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -34,7 +35,7 @@ export const Navigation = () => {
   return (
     <header
       className={cn(
-        `sticky top-0 z-50 w-full bg-base/75 px-4 backdrop-blur-md backdrop-brightness-125  backdrop-saturate-150 md:px-0`,
+        `sticky top-0 z-10 w-full bg-base/75 px-4 backdrop-blur-md backdrop-brightness-125  backdrop-saturate-150 md:px-0`,
       )}
     >
       <div
@@ -49,7 +50,7 @@ export const Navigation = () => {
           Jeremiah Ashley
         </Link>
 
-        <div className="ml-auto flex flex-row items-center justify-start space-x-1">
+        <div className="ml-auto flex flex-row items-stretch justify-start space-x-1">
           {navigationLinks.map((link) => (
             <Link
               key={link.href}
@@ -73,8 +74,12 @@ export const Navigation = () => {
 
           <SelectTheme />
 
+          <SpotifySidebar />
+
           <button
-            className="inline-flex items-center justify-center space-x-2 overflow-hidden rounded-md border border-transparent p-2 text-base text-text hover:border-highlightHigh  hover:bg-overlay hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-love focus-visible:ring-opacity-75 md:hidden"
+            className={cn(
+              `inline-flex w-full items-center justify-center space-x-2 overflow-hidden rounded-md border border-transparent p-2 text-base text-text hover:border-highlightHigh  hover:bg-overlay hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-love focus-visible:ring-opacity-75 md:hidden`,
+            )}
             onClick={() => setIsOpen((current) => !current)}
           >
             <FontAwesomeIcon

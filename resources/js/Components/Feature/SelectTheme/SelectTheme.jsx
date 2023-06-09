@@ -56,12 +56,16 @@ export const SelectTheme = ({ className }) => {
   }, [selectedTheme])
 
   return (
-    <Menu as="div" className={cn(`relative inline-block text-left`, className)}>
-      <div>
-        <Menu.Button className="inline-flex w-full items-center justify-center space-x-2 overflow-hidden rounded-md border border-transparent p-2 text-base text-text  hover:border-highlightHigh hover:bg-overlay hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-love focus-visible:ring-opacity-75">
-          <DynamicThemeIcon theme={selectedTheme} />
-        </Menu.Button>
-      </div>
+    <Menu
+      as="div"
+      className={cn(
+        `relative inline-flex flex-row items-stretch justify-start`,
+        className,
+      )}
+    >
+      <Menu.Button className="relative inline-flex aspect-square w-full items-center justify-center space-x-2 overflow-hidden rounded-md border border-transparent p-2 text-base text-text  hover:border-highlightHigh hover:bg-overlay hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-love focus-visible:ring-opacity-75">
+        <DynamicThemeIcon theme={selectedTheme} />
+      </Menu.Button>
 
       <Transition
         as={Fragment}
@@ -72,7 +76,7 @@ export const SelectTheme = ({ className }) => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right rounded-md border border-highlightMed bg-surface shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-love focus-visible:ring-opacity-75">
+        <Menu.Items className="absolute right-0 top-full mt-2 w-56 origin-top-right rounded-md border border-highlightMed bg-surface shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-love focus-visible:ring-opacity-75">
           <div className="px-1 py-1 ">
             {themes.map((theme) => (
               <Menu.Item key={theme.value}>
