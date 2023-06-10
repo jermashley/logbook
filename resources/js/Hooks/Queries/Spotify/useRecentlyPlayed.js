@@ -12,7 +12,20 @@ export const useRecentlyPlayed = ({ config = {} } = {}) =>
     queryKey: [`spotify`, `recently-played`],
     queryFn: getRecentlyPlayed,
 
-    select: ({ data }) => data,
+    select: ({ data }) => {
+      let uniqueRecentlyPlayed = data.items.reduce((accumulator, current) => {
+        if (!accumulator.find((item) => item.track.id === current.track.id)) {
+          accumulator.push(current)
+        }
+
+        return accumulator
+      }, [])
+
+      return {
+        ...data,
+        items: uniqueRecentlyPlayed,
+      }
+    },
 
     refetchInterval: 30000,
     refetchIntervalInBackground: true,
