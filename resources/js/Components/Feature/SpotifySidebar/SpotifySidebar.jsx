@@ -160,7 +160,7 @@ export const SpotifySidebar = () => {
                     )}
                   </section>
 
-                  <section className="col-start-1 col-end-13 flex flex-col items-start justify-start space-y-4 overflow-y-auto sm:landscape:col-start-7 sm:landscape:col-end-13 sm:landscape:row-start-1 sm:landscape:row-end-3 md:landscape:col-start-1 md:landscape:col-end-13 md:landscape:row-start-2 md:landscape:row-end-3">
+                  <section className="relative col-start-1 col-end-13 flex flex-col items-start justify-start space-y-4 overflow-y-auto sm:landscape:col-start-7 sm:landscape:col-end-13 sm:landscape:row-start-1 sm:landscape:row-end-3 md:landscape:col-start-1 md:landscape:col-end-13 md:landscape:row-start-2 md:landscape:row-end-3">
                     <h3 className="text-xs font-semibold uppercase text-text/75">
                       Recently Played
                     </h3>
@@ -171,19 +171,32 @@ export const SpotifySidebar = () => {
                         className="grid grid-cols-12 grid-rows-2 gap-x-4 gap-y-0"
                       >
                         <div className="col-start-1 col-end-4 row-start-1 row-end-3 flex flex-col items-center justify-center">
-                          <div className="mx-auto aspect-square w-full overflow-hidden rounded-md">
+                          <a
+                            className="group relative mx-auto block aspect-square w-full overflow-hidden rounded-md"
+                            href={item.track.album.external_urls.spotify}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <div className="absolute inset-0 bottom-0 left-0 right-0 top-0 z-10 flex flex-col items-center justify-center overflow-hidden rounded-md bg-highlightLow/75 opacity-0 backdrop-blur-md backdrop-brightness-125 backdrop-saturate-150 transition-opacity duration-500 group-hover:opacity-100">
+                              <FontAwesomeIcon
+                                icon={faAlbumCollection}
+                                className="text-center text-xl text-text"
+                                fixedWidth
+                              />
+                            </div>
+
                             <img
                               src={item.track.album.images[0].url}
                               alt=""
                               className="h-full w-full object-cover"
                             />
-                          </div>
+                          </a>
                         </div>
 
                         <a
                           href={item.track.external_urls.spotify}
                           target="_blank"
-                          className="col-start-4 col-end-13 row-start-1 row-end-2 block self-end text-sm font-bold leading-none text-text hover:text-love"
+                          className="col-start-4 col-end-13 row-start-1 row-end-2 block self-end font-bold text-text hover:text-love md:text-sm sm:landscape:text-xs"
                           rel="noreferrer"
                         >
                           {item.track.name}
