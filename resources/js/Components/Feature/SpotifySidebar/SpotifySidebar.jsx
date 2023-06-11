@@ -43,7 +43,7 @@ export const SpotifySidebar = () => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bottom-0 left-0 right-0 top-0 z-50 h-screen w-full bg-base/50 backdrop-blur-lg" />
+            <div className="fixed inset-0 bottom-0 left-0 right-0 top-0 z-50 h-screen w-full bg-base/50 backdrop-blur-2xl" />
           </Transition.Child>
 
           <div

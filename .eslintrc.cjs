@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: [`simple-import-sort`, `@tanstack/query`],
+  plugins: [`simple-import-sort`, `@tanstack/query`, `react-refresh`],
   root: true,
   parserOptions: {
     ecmaVersion: 2020,
@@ -33,6 +33,7 @@ module.exports = {
     'react/prop-types': 0,
     'react/no-children-prop': 0,
     'react/react-in-jsx-scope': `off`,
+    'react-refresh/only-export-components': 'warn',
     'jsx-a11y/anchor-is-valid': [
       `error`,
       {

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const Footer = () => {
   return (
-    <footer className="mx-auto flex max-w-2xl flex-col items-center justify-start space-y-1 px-0 py-4">
+    <footer className="mx-auto flex w-full flex-col items-center justify-start space-y-1 border-t border-t-highlightLow px-0 py-4">
       <p className="text-center text-xs">
         Made with{` `}
         <FontAwesomeIcon icon={faHeart} className="mx-1 text-rose" fixedWidth />

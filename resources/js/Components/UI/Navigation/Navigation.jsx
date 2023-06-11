@@ -35,7 +35,7 @@ export const Navigation = () => {
   return (
     <header
       className={cn(
-        `sticky top-0 z-10 w-full bg-base/75 px-4 backdrop-blur-md backdrop-brightness-125  backdrop-saturate-150 md:px-0`,
+        `sticky top-0 z-10 w-full border-b border-b-highlightLow bg-base/75 px-4  backdrop-blur-md backdrop-brightness-125 backdrop-saturate-150 md:px-0`,
       )}
     >
       <div
