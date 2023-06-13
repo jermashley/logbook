@@ -80,8 +80,8 @@ export const SpotifySidebar = () => {
                   </button>
                 </Dialog.Title>
 
-                <div className="mt-6 grid h-full w-full grid-cols-12 grid-rows-[auto_1fr_auto] gap-x-4 gap-y-8 overflow-hidden sm:grid-rows-[auto_1fr_auto] sm:landscape:mt-4 sm:landscape:grid-rows-2 md:landscape:grid-rows-[auto_1fr_auto]">
-                  <section className="col-start-1 col-end-13 grid grid-cols-12 grid-rows-2 gap-x-4 sm:landscape:col-start-1 sm:landscape:col-end-7 sm:landscape:row-start-1 sm:landscape:row-end-2 sm:landscape:gap-x-2 md:landscape:col-start-1 md:landscape:col-end-13">
+                <div className="mt-6 grid h-full w-full grid-cols-12 grid-rows-[auto_1fr_auto] gap-x-4 gap-y-8 sm:grid-rows-[auto_1fr_auto] sm:landscape:mt-4 sm:landscape:grid-rows-2 md:landscape:grid-rows-[auto_1fr_auto]">
+                  <section className="col-start-1 col-end-13 grid grid-cols-12 grid-rows-2 gap-x-4 sm:landscape:col-start-1 sm:landscape:col-end-7 sm:landscape:row-start-1 sm:landscape:row-end-2 sm:landscape:gap-x-2 md:landscape:col-start-1 md:landscape:col-end-13 md:landscape:grid-rows-[auto_1fr] md:landscape:gap-y-4">
                     {nowPlaying.data?.item ? (
                       <>
                         <a
@@ -91,15 +91,16 @@ export const SpotifySidebar = () => {
                           }
                           target="_blank"
                           rel="noreferrer"
-                          className="group relative col-start-1 col-end-5 row-start-1 row-end-3 block h-full w-full self-center overflow-hidden rounded-md shadow-xl sm:landscape:col-start-1 sm:landscape:col-end-6 sm:landscape:row-start-1 sm:landscape:row-end-3"
+                          className="group relative col-start-1 col-end-5 row-start-1 row-end-3 block h-full w-full self-center rounded-md sm:landscape:col-start-1 sm:landscape:col-end-6 sm:landscape:row-start-1 sm:landscape:row-end-3 md:landscape:col-start-1 md:landscape:col-end-13 md:landscape:row-start-1 md:landscape:row-end-2"
                         >
                           <div className="absolute inset-0 z-10 flex flex-col items-center justify-center overflow-hidden rounded-md bg-highlightLow/75 opacity-0 backdrop-blur-md backdrop-brightness-125 backdrop-saturate-150 transition-opacity duration-500 group-hover:opacity-100">
                             <FontAwesomeIcon
                               icon={faAlbumCollection}
-                              className="text-center text-2xl text-text md:text-4xl"
+                              className="text-center text-2xl text-text md:text-[3rem]"
                               fixedWidth
                             />
-                            <span className="mt-4 text-xs font-semibold text-text md:text-sm">
+
+                            <span className="mt-4 text-xs font-semibold text-text md:mt-6 md:text-lg">
                               View Album
                             </span>
                           </div>
@@ -107,11 +108,11 @@ export const SpotifySidebar = () => {
                           <img
                             src={nowPlaying.data.item.album.images[0].url}
                             alt=""
-                            className="h-full w-auto object-cover"
+                            className="h-full w-full rounded-md object-cover shadow-xl"
                           />
                         </a>
 
-                        <div className="col-start-5 col-end-13 row-start-1 row-end-3 flex flex-col items-start justify-center self-center sm:landscape:col-start-6 sm:landscape:col-end-13 sm:landscape:row-start-1 sm:landscape:row-end-3">
+                        <div className="col-start-5 col-end-13 row-start-1 row-end-3 flex flex-col items-start justify-center self-center sm:landscape:col-start-6 sm:landscape:col-end-13 sm:landscape:row-start-1 sm:landscape:row-end-3 md:landscape:col-start-1 md:landscape:col-end-13 md:landscape:row-start-2 md:landscape:row-end-3">
                           <h3 className="text-xs font-semibold uppercase text-text/75">
                             Now Playing
                           </h3>
